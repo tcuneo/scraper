@@ -1,0 +1,46 @@
+<div id="wrapper">
+     
+      <div id="articles">
+
+        <ul class="article-ul">
+
+        {{#each dbArticle}}
+         <li>
+            <img src={{img}} />
+            <button class="li-article" data-id={{_id}} class="btn">Notes</button>
+            <h3> <a href={{link}} target="_blank">{{title}} </a> </h3>
+            <p class="summary">{{summary}}</p>
+         </li>
+         
+        {{/each}}
+
+        </ul>
+
+      </div>
+
+      <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Notes</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="notes">
+            <ul id="currNotes" class="mx-0 px-0"></ul>
+            Title: <p> <input id='titleinput' name='title' > </p>
+            Note: <p> <textarea id='bodyinput' name='body'></textarea> </p>
+          </div>
+          <div class="modal-footer">
+            {{!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+            <button type="button" id="savenote" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      {{!-- <div id="notes"></div> --}}
+    </div>
+
+<link rel="stylesheet" href="article.css"/>
